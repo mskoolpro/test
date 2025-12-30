@@ -10,14 +10,23 @@
 
 /* Root Colors & Variables */
 :root {
-    --primary: #1F51BA;
-    --primary-light: #2E5FD8;
-    --primary-dark: #1640A0;
-    --secondary: #00BCD4;
-    --accent: #FF6F00;
-    --success: #388E3C;
-    --warning: #F57C00;
-    --error: #D32F2F;
+    /* Primary Blue from Logo */
+    --primary: #0c519c;
+    --primary-light: #1565c0;
+    --primary-dark: #0a3d7a;
+    
+    /* Accent Colors from Logo Gradient */
+    --secondary: #dd4e00;
+    --accent: #feb801;
+    --success: #4caf50;
+    --warning: #ff9800;
+    --error: #f44336;
+    
+    /* Gradient stops for modern look */
+    --gradient-blue: #0c519c;
+    --gradient-purple: #7b2cbf;
+    --gradient-orange: #dd4e00;
+    --gradient-gold: #feb801;
     
     --bg-light: #F9FAFB;
     --bg-white: #FFFFFF;
@@ -76,7 +85,7 @@ p {
 }
 
 .gradient-text {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    background: linear-gradient(135deg, var(--gradient-blue) 0%, var(--gradient-purple) 50%, var(--gradient-orange) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -119,7 +128,7 @@ p {
 }
 
 .btn-secondary:hover {
-    background-color: #00A8BF;
+    background-color: #c94200;
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
@@ -148,10 +157,9 @@ p {
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color: var(--bg-white);
-    border-bottom: 1px solid var(--border);
+    background: linear-gradient(90deg, rgba(12, 81, 156, 0.98) 0%, rgba(123, 44, 191, 0.98) 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.95);
 }
 
 .navbar .container {
@@ -173,7 +181,7 @@ p {
     gap: 8px;
     font-size: 1.5rem;
     font-weight: 800;
-    color: var(--primary);
+    color: white;
 }
 
 .logo-image {
@@ -193,14 +201,14 @@ p {
 }
 
 .nav-link {
-    color: var(--text-gray);
+    color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     font-weight: 500;
     transition: var(--transition);
 }
 
 .nav-link:hover {
-    color: var(--primary);
+    color: white;
 }
 
 .nav-link.btn-primary {
@@ -219,7 +227,7 @@ p {
 
 .hero {
     padding: 80px 0;
-    background: linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%);
+    background: linear-gradient(135deg, #f8f9ff 0%, #fff5f0 100%);
     position: relative;
     overflow: hidden;
 }
@@ -231,7 +239,7 @@ p {
     right: -20%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(31, 81, 186, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(221, 78, 0, 0.1) 0%, transparent 70%);
     border-radius: 50%;
 }
 
@@ -399,7 +407,8 @@ section {
    ============================================================ */
 
 .features {
-    background-color: var(--bg-light);
+    background: linear-gradient(180deg, #f8f9ff 0%, #fff5f0 100%);
+    position: relative;
 }
 
 .features-grid {
@@ -423,7 +432,8 @@ section {
 .feature-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-xl);
-    border-color: var(--primary);
+    border-color: #0c519c;
+    background: linear-gradient(135deg, rgba(12, 81, 156, 0.05) 0%, rgba(254, 184, 1, 0.05) 100%);
 }
 
 .feature-icon {
@@ -444,7 +454,7 @@ section {
    ============================================================ */
 
 .modules {
-    background-color: white;
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9ff 100%);
 }
 
 .modules-group {
@@ -467,10 +477,10 @@ section {
 }
 
 .module-card {
-    background: linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #faf9f8 100%);
     padding: 28px;
     border-radius: 12px;
-    border: 2px solid transparent;
+    border: 2px solid rgba(12, 81, 156, 0.1);
     transition: var(--transition);
     position: relative;
     overflow: hidden;
@@ -483,15 +493,15 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    background: linear-gradient(135deg, #0c519c 0%, #dd4e00 100%);
     opacity: 0;
     transition: var(--transition);
 }
 
 .module-card:hover {
-    border-color: var(--primary);
+    border-color: #0c519c;
     transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 15px 30px rgba(12, 81, 156, 0.2);
 }
 
 .module-card:hover::before {
@@ -501,8 +511,10 @@ section {
 .module-number {
     font-size: 2.5rem;
     font-weight: 800;
-    color: var(--primary);
-    opacity: 0.5;
+    background: linear-gradient(135deg, #0c519c 0%, #7b2cbf 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 8px;
 }
 
@@ -657,7 +669,7 @@ section {
    ============================================================ */
 
 .pricing {
-    background-color: white;
+    background: linear-gradient(180deg, #fff5f0 0%, #ffffff 100%);
 }
 
 .pricing-toggle {
@@ -692,7 +704,7 @@ section {
 
 .pricing-card {
     background: white;
-    border: 2px solid var(--border);
+    border: 2px solid rgba(12, 81, 156, 0.15);
     border-radius: 16px;
     padding: 40px;
     transition: var(--transition);
@@ -704,13 +716,13 @@ section {
 
 .pricing-card:hover {
     transform: translateY(-8px);
-    border-color: var(--primary);
-    box-shadow: var(--shadow-lg);
+    border-color: #0c519c;
+    box-shadow: 0 15px 40px rgba(12, 81, 156, 0.15);
 }
 
 .pricing-card.featured {
-    border-color: var(--primary);
-    background: linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%);
+    border-color: #0c519c;
+    background: linear-gradient(135deg, rgba(12, 81, 156, 0.05) 0%, rgba(254, 184, 1, 0.05) 100%);
     transform: scale(1.05);
 }
 
@@ -794,7 +806,7 @@ section {
    ============================================================ */
 
 .faq {
-    background-color: var(--bg-light);
+    background: linear-gradient(180deg, #f8f9ff 0%, #fff5f0 100%);
 }
 
 .faq-grid {
@@ -805,14 +817,15 @@ section {
 
 .faq-item {
     background: white;
-    border: 1px solid var(--border);
+    border: 2px solid rgba(12, 81, 156, 0.1);
     border-radius: 12px;
     overflow: hidden;
     transition: var(--transition);
 }
 
 .faq-item:hover {
-    border-color: var(--primary);
+    border-color: #0c519c;
+    box-shadow: 0 10px 25px rgba(12, 81, 156, 0.1);
 }
 
 .faq-question {
@@ -833,12 +846,14 @@ section {
 }
 
 .faq-item:hover .faq-question {
-    background-color: var(--bg-light);
+    background-color: rgba(12, 81, 156, 0.03);
+    color: #0c519c;
 }
 
 .faq-icon {
     font-size: 1.5rem;
     transition: var(--transition);
+    color: #0c519c;
 }
 
 .faq-item.active .faq-icon {
@@ -849,7 +864,7 @@ section {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
-    background-color: var(--bg-light);
+    background-color: rgba(12, 81, 156, 0.02);
 }
 
 .faq-item.active .faq-answer {
@@ -867,7 +882,7 @@ section {
    ============================================================ */
 
 .cta {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    background: linear-gradient(135deg, #0c519c 0%, #7b2cbf 50%, #dd4e00 100%);
     color: white;
     text-align: center;
     position: relative;
@@ -919,7 +934,7 @@ section {
    ============================================================ */
 
 .footer {
-    background-color: #1F2937;
+    background: linear-gradient(135deg, #0c2d52 0%, #0c519c 50%, #1a1a2e 100%);
     color: white;
     padding: 60px 0 20px;
 }
@@ -952,7 +967,7 @@ section {
 }
 
 .footer-col a:hover {
-    color: white;
+    color: #feb801;
 }
 
 .social-links {
@@ -974,7 +989,7 @@ section {
 }
 
 .social-link:hover {
-    background: var(--primary);
+    background: linear-gradient(135deg, #0c519c 0%, #7b2cbf 100%);
 }
 
 .footer-bottom {
